@@ -1,0 +1,13 @@
+Source: autofirma
+Section: utils
+Priority: optional
+Maintainer: Alberto Fernández <infjaf@gmail.com>
+Build-Depends: debhelper (>= 9),maven
+Standards-Version: 3.9.8
+Homepage: https://github.com/ctt-gob-es/clienteafirma
+
+Package: autofirma
+Architecture: all
+Depends: openjdk-8-jre | oracle-java8-installer, libnss3-tools
+Description: Cliente Autofirma
+ Cliente Autofirma
