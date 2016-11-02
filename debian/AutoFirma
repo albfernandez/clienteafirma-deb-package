@@ -1,2 +1,2 @@
 #!/bin/bash
-java -jar /usr/share/autofirma/AutoFirma.jar $*
+java -DdisableSslChecks=true -jar /usr/share/autofirma/AutoFirma.jar $*
