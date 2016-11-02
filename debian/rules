@@ -17,9 +17,9 @@ override_dh_auto_build:
 	mvn clean package -Dmaven.test.skip=true
 
 override_dh_install:
-	mkdir -p $(CURDIR)/debian/tmp/usr/lib/AutoFirma/
-	cp afirma-simple/target/afirma-ui-simpleafirma*.jar $(CURDIR)/debian/tmp/usr/lib/AutoFirma/AutoFirma.jar
-	cp afirma-ui-simple-configurator/target/afirma-ui-simpleafirma-configurator*.jar $(CURDIR)/debian/tmp/usr/lib/AutoFirma/AutoFirmaConfigurador.jar
+	mkdir -p $(CURDIR)/debian/tmp/usr/share/autofirma/
+	cp afirma-simple/target/afirma-ui-simpleafirma*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar
+	cp afirma-ui-simple-configurator/target/afirma-ui-simpleafirma-configurator*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar
 	dh_install
 
 
