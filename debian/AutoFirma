@@ -1,2 +1,2 @@
 #!/bin/bash
-java -DdisableSslChecks=true -jar /usr/share/autofirma/AutoFirma.jar $*
+AUTOFIRMA_AVOID_UPDATE_CHECK=true java -DdisableSslChecks=true -jar /usr/share/autofirma/AutoFirma.jar $*
