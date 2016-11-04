@@ -1,0 +1,6 @@
+Template: autofirma/aviso_navegadores
+Type: note
+Description: Se cerrarán todos los navegadores
+ Para una correcta instalación de los certificados necesarios por Autofirma, 
+ es necesario cerrar todos los navegadores. El instalador los cerrará por usted cuando continue, 
+ asegurese de que guarda la información importante antes.
