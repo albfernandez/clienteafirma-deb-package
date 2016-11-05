@@ -1,3 +1,9 @@
+autofirma (1.4.7.1-2) unstable; urgency=medium
+
+  * No cerramos los navegadores en la instalación
+
+ -- Alberto Fernández <infjaf@gmail.com>  Sat, 05 Nov 2016 21:58:55 +0100
+
 autofirma (1.4.7.1-1) unstable; urgency=medium
 
   * 1.4.7.1 release

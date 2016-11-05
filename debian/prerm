@@ -21,16 +21,6 @@ case "$1" in
     remove|upgrade|deconfigure)
 		# damos permisos de desinstalacion de los certificados del almacen de firefox
 		if [ -f "/usr/share/autofirma/uninstall.sh" ]; then
-		# Cerramos los navegadores Firefox, Chrome y Chromium para eliminar correctamente las preferencias y certificados
-		if pgrep chromium; then
-		pkill chromium;
-		fi
-		if pgrep chrome; then
-		pkill chrome;
-		fi
-		if pgrep firefox; then
-		pkill firefox;
-		fi
 
 		chmod +x /usr/share/autofirma/uninstall.sh
 		/usr/share/autofirma/uninstall.sh
