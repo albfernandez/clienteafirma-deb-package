@@ -1,3 +1,10 @@
+autofirma (1.4.7.1-3) unstable; urgency=medium
+
+  * Reduce el tamaño de los jars generados.
+  * Soporta java 9
+
+ -- Alberto Fernández <infjaf@gmail.com>  Mon, 07 Nov 2016 19:31:41 +0100
+
 autofirma (1.4.7.1-2) unstable; urgency=medium
 
   * No cerramos los navegadores en la instalación
