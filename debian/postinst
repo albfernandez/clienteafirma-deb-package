@@ -23,7 +23,7 @@ set -e
 case "$1" in
     configure)
 		# generamos certificado CA y SSL
-		java -jar /usr/share/autofirma/AutoFirmaConfigurador.jar
+		java -classpath /usr/share/autofirma/AutoFirmaConfigurador.jar:/usr/share/autofirma/AutoFirma.jar es.gob.afirma.standalone.configurator.AutoFirmaConfigurator
 		# damos permiso al script de instalacion del certificado para firefox y lo ejecutamos
 
 		echo "Generacion de certificados"

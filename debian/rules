@@ -19,7 +19,7 @@ override_dh_auto_build:
 override_dh_install:
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/autofirma/
 	cp afirma-simple/target/afirma-ui-simpleafirma*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar
-	cp afirma-ui-simple-configurator/target/afirma-ui-simpleafirma-configurator*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar
+	cp afirma-ui-simple-configurator/target/original-afirma-ui-simpleafirma-configurator*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar
 	# clean files
 	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar nss/WINDOWS/nss32.zip nss/WINDOWS/nss64.zip
 	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar linux/certutil.linux.zip windows/certutil.windows.zip osx/certutil.osx.zip
