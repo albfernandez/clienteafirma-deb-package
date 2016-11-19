@@ -1,10 +1,19 @@
 autofirma for Debian
 -------------------
 
-<this file describes information about the source package, see Debian policy
-manual section 4.14. You WILL either need to modify or delete this file>
+
+Para que compile autofirma es necesario descargar el proyecto https://github.com/ctt-gob-es/clienteafirma-external/tree/master/afirma-lib-itext/trunk
+e instalarlo en el repostorio local maven.
+(Esto solo es necesario hacerlo una vez, pero ojo con las versiones puesto que nos descargamos master.. no tienen tags...)
+
+git clone https://github.com/ctt-gob-es/clienteafirma-external.git
+cd clienteafirma-external/
+git archive -o ../export.zip  67bf739c170947c3655b9e3bdf7812772ce582dc
+unzip -d ../itext2 ../export.zip
+cd ../itext2/afirma-lib-itext/trunk/
+mvn clean package install
 
 
 
- -- Alberto Fernández <alberto@unknown>  Mon, 24 Oct 2016 00:17:38 +0200
+ -- Alberto Fernández <infjaf@gmail.com>  Mon, 24 Oct 2016 00:17:38 +0200
 
