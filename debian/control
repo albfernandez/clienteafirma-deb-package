@@ -10,4 +10,8 @@ Package: autofirma
 Architecture: all
 Depends: openjdk-8-jre | oracle-java8-installer | openjdk-9-jre | oracle-java9-installer, libnss3-tools, debconf
 Description: Cliente Autofirma
- Cliente Autofirma
+ Autofirma es una Herramienta de firma electrónica en entornos de escritorio
+ y dispositivos móviles.
+ Esta herramienta es usada habitualmente en las operaciones de firma 
+ electrónica para realizar trámites con las Admimistraciones Públicas 
+ españolas.
