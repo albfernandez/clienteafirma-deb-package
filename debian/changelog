@@ -1,3 +1,10 @@
+autofirma (1.4.7.1-5) unstable; urgency=medium
+
+  * Limpia avisos lintian
+  * Nueva pagina del manual
+
+ -- Alberto Fernández <infjaf@gmail.com>  Sat, 19 Nov 2016 13:10:46 +0100
+
 autofirma (1.4.7.1-4) unstable; urgency=medium
 
   * Reduce el tamaño del paquete generando utilizando el classpath
