@@ -1,3 +1,9 @@
+autofirma (1.4.7.2-1) unstable; urgency=medium
+
+  * Permite cargar el NSS compartido (usado por Chrome) 
+
+ -- Alberto Fernández <infjaf@gmail.com>  Mon, 19 Dec 2016 23:20:06 +0100
+
 autofirma (1.4.7.1-5) unstable; urgency=medium
 
   * Limpia avisos lintian

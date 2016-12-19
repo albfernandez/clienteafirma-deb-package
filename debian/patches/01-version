@@ -5,9 +5,9 @@ Description: <short summary of the patch>
  information below has been extracted from the changelog. Adjust it or drop
  it.
  .
- autofirma (1.4.7-2) unstable; urgency=medium
+ autofirma (1.4.7.2-1) unstable; urgency=medium
  .
-   * Cierra los navegadores al instalar
+   * Permite cargar el NSS compartido (usado por Chrome)
 Author: Alberto Fernández <infjaf@gmail.com>
 
 ---
@@ -21,16 +21,15 @@ Bug-Debian: https://bugs.debian.org/<bugnumber>
 Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
 Forwarded: <no|not-needed|url proving that it has been forwarded>
 Reviewed-By: <name and email of someone who approved the patch>
-Last-Update: 2016-11-03
+Last-Update: 2016-12-19
 
---- autofirma-1.4.7.orig/afirma-ui-simple-configurator/src/main/java/es/gob/afirma/standalone/configurator/ConfiguratorLinux.java
-+++ autofirma-1.4.7/afirma-ui-simple-configurator/src/main/java/es/gob/afirma/standalone/configurator/ConfiguratorLinux.java
-@@ -39,7 +39,7 @@ final class ConfiguratorLinux implements
- 
-             ConfiguratorUtil.installFile(certPack.getPkcs12(), new File(
-             		ConfiguratorUtil.getApplicationDirectory(), KS_FILENAME));
--
-+ConfiguratorUtil.installFile(certPack.getCaCertificate().getEncoded(), new File(ConfiguratorUtil.getApplicationDirectory(), "AutoFirma_ROOT.cer"));
-             // comando para sacar los usuarios del sistema
-             final String[] command = new String[] {
-     				"cut", //$NON-NLS-1$
+--- autofirma-1.4.7.2.orig/afirma-simple/src/main/resources/properties/updater.properties
++++ autofirma-1.4.7.2/afirma-simple/src/main/resources/properties/updater.properties
+@@ -1,4 +1,4 @@
+-currentVersionText=1.5b1
++currentVersionText=1.4.7.2
+ url=http://estaticos.redsara.es/comunes/autofirma/autofirma.version
+ currentVersion=5
+-updateSite=http://firmaelectronica.gob.es/Home/Descargas.html
+\ No newline at end of file
++updateSite=http://firmaelectronica.gob.es/Home/Descargas.html
