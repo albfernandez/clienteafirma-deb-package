@@ -14,6 +14,9 @@
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 override_dh_auto_build:
+	if [ -d external/clienteafirma-external ]; then	cd external/clienteafirma-external;	mvn clean install -Dmaven.text.skip=true; cd ../../; fi		
+	if [ -d external/jmulticard ]; then	cd external/jmulticard; mvn clean install -Dmaven.text.skip=true; cd ../../; fi
+	
 	mvn clean package -Dmaven.test.skip=true
 
 override_dh_install:
