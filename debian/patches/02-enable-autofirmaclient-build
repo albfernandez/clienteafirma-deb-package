@@ -5,10 +5,10 @@ Description: <short summary of the patch>
  information below has been extracted from the changelog. Adjust it or drop
  it.
  .
- autofirma (1.4.7.2-1) unstable; urgency=medium
+ autofirma (1.5.0.0-1) unstable; urgency=medium
  .
-   * Permite cargar el NSS compartido (usado por Chrome)
-Author: Alberto Fernández <infjaf@gmail.com>
+   * Nueva version oficial
+Author: Alberto Fernández Martínez <infjaf@gmail.com>
 
 ---
 The information above should follow the Patch Tagging Guidelines, please
@@ -21,15 +21,23 @@ Bug-Debian: https://bugs.debian.org/<bugnumber>
 Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
 Forwarded: <no|not-needed|url proving that it has been forwarded>
 Reviewed-By: <name and email of someone who approved the patch>
-Last-Update: 2016-12-19
+Last-Update: 2017-01-26
 
---- autofirma-1.4.7.2.orig/afirma-simple/src/main/resources/properties/updater.properties
-+++ autofirma-1.4.7.2/afirma-simple/src/main/resources/properties/updater.properties
-@@ -1,4 +1,4 @@
--currentVersionText=1.5b1
-+currentVersionText=1.4.7.2
- url=http://estaticos.redsara.es/comunes/autofirma/autofirma.version
- currentVersion=5
--updateSite=http://firmaelectronica.gob.es/Home/Descargas.html
+--- autofirma-1.5.0.0.orig/pom.xml
++++ autofirma-1.5.0.0/pom.xml
+@@ -47,6 +47,8 @@
+ 		<module>afirma-core-massive</module>
+ 		<module>afirma-server-triphase-signer-core</module>
+ 		<module>afirma-server-triphase-signer-document</module>
++		<module>afirma-simple</module>
++		<module>afirma-ui-simple-configurator</module>
+ 	</modules>
+ 	
+ 	<repositories>
+@@ -119,4 +121,4 @@
+ 			</plugin>
+ 		</plugins>
+ 	</build>
+-</project>
 \ No newline at end of file
-+updateSite=http://firmaelectronica.gob.es/Home/Descargas.html
++</project>
