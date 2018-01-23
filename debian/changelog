@@ -1,3 +1,15 @@
+autofirma (1.6.0-1) UNRELEASED; urgency=medium
+
+  * Nueva version de autofirma 
+
+ -- Alberto Fernández Martínez <infjaf@gmail.com>  Tue, 23 Jan 2018 19:49:04 +0100
+
+autofirma (1.5.0.1-1) unstable; urgency=medium
+
+  * Nueva version oficial para Linux 
+
+ -- Alberto Fernández Martínez <infjaf@gmail.com>  Mon, 15 May 2017 20:21:19 +0200
+
 autofirma (1.5.0.0-1) unstable; urgency=medium
 
   * Nueva version oficial
