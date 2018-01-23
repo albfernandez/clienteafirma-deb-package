@@ -17,14 +17,17 @@ override_dh_auto_build:
 	if [ -d external/clienteafirma-external ]; then	cd external/clienteafirma-external;	mvn clean install -Dmaven.text.skip=true; cd ../../; fi		
 	if [ -d external/jmulticard ]; then	cd external/jmulticard; mvn clean install -Dmaven.text.skip=true; cd ../../; fi
 	
-	mvn clean package -Dmaven.test.skip=true
+	mvn clean package -Dmaven.test.skip=true -Denv=deploy
 
 override_dh_install:
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/autofirma/
-	cp afirma-simple/target/afirma-ui-simpleafirma*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar
-	cp afirma-ui-simple-configurator/target/original-afirma-ui-simpleafirma-configurator*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar
+	cp afirma-simple/target/AutoFirma*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar
+	cp afirma-ui-simple-configurator/target/original-AutoFirmaConfigurador*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar
 	# clean files
-	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar nss/WINDOWS/nss32.zip nss/WINDOWS/nss64.zip
+	#zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar nss/WINDOWS/nss32.zip nss/WINDOWS/nss64.zip
+	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar linux/certutil.linux.zip 
+	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar windows/certutil.windows.zip windows/afirma_register.exe windows/afirma_register.bat 
+	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar osx/certutil.osx.zip osx/trust_settings.plist
 	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar linux/certutil.linux.zip windows/certutil.windows.zip osx/certutil.osx.zip
 	dh_install
 
