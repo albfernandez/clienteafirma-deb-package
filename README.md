@@ -6,13 +6,19 @@ Scripts para la generación del paquete deb de Autofirma a partir de las fuentes
 
 ### Oracle JDK 8
 
-En Debian
+Se necesita oracle-jdk 8, OpenJDK no tiene las librerias jnlp y no compila el proyecto completo.
 
-	apt-get install 
+En Debian, descargarse java de la página de Oracle y ejecutar estos comandos (personaliza para la versin que te hayas bajado)
+
 	make-jpkg  jdk-8u151-linux-x64.tar.gz
 	dpkg -i oracle-java8-jdk_8u151_amd64.deb 
 	 
-Se necesita oracle-jdk 8, OpenJDK no tiene las librerias jnlp y no compila el proyecto completo.
+En Ubuntu
+
+	sudo add-apt-repository ppa:webupd8team/java
+	sudo apt-get update
+	sudo apt-get install oracle-java8-installer
+
 
 ### Poner repositorio de la Universidad Jaume I en .m2/settings.xml
 	
@@ -45,10 +51,10 @@ Se necesita oracle-jdk 8, OpenJDK no tiene las librerias jnlp y no compila el pr
 ### Compilar e instalar Instalar dependencias
  * jmulticard
  * clienteafirma-external
-  * jmimemagic
-  * itext
-  * juniversalchardet
-  * afirma-lib-oro
+   * jmimemagic
+   * itext
+   * juniversalchardet
+   * afirma-lib-oro
 
 #### jmulticard
 
@@ -72,6 +78,7 @@ Se puede generar el paquete deb con el script construir_paquete.sh
 Si seguimos la compilacion manual (probar el proyecto pero no generar el deb)
 
 	git clone https://github.com/ctt-gob-es/clienteafirma.git
+	cd clienteafirma
 	mvn clean package -Dmaven.test.skip=true -Denv=deploy
 
     
