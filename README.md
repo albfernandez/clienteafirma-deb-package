@@ -7,14 +7,14 @@ Scripts para la generación del paquete deb de Autofirma a partir de las fuentes
 ### Oracle JDK 8
 
 En Debian
-	 apt-get install 
-	 make-jpkg  jdk-8u151-linux-x64.tar.gz
-	 dpkg -i oracle-java8-jdk_8u151_amd64.deb 
-	 
-Se necesita oracle-jdk 8
-Openjdk no tiene las librerias jnlp y no compila el proyecto completo.
 
-	poner repositorio de la Universidad Jaume I en .m2/settings.xml
+	apt-get install 
+	make-jpkg  jdk-8u151-linux-x64.tar.gz
+	dpkg -i oracle-java8-jdk_8u151_amd64.deb 
+	 
+Se necesita oracle-jdk 8, OpenJDK no tiene las librerias jnlp y no compila el proyecto completo.
+
+### Poner repositorio de la Universidad Jaume I en .m2/settings.xml
 	
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -41,27 +41,38 @@ Openjdk no tiene las librerias jnlp y no compila el proyecto completo.
   	</activeProfiles>
 </settings>
 ```
- * Instalar jmulticard
 
-mvn -Dmaven.test.skip=true clean package install
+### Compilar e instalar Instalar dependencias
+ * jmulticard
+ * clienteafirma-external
+  * jmimemagic
+  * itext
+  * juniversalchardet
+  * afirma-lib-oro
 
- * Instalar jmimemagic
- 
-clienteafirma-external/afirma-lib-jmimemagic/trunk
+#### jmulticard
 
-mvn clean package install
+    git clone https://github.com/ctt-gob-es/jmulticard.git
+    cd jmulticard
+    mvn -Dmaven.test.skip=true clean package install
+    
+#### clienteafirma-external
 
-	
+     git clone https://github.com/ctt-gob-es/clienteafirma-external.git
+     cd clienteafirma-external
+     mvn clean package install
+     
 
-Instalar itext
+## Construir el paquete deb.
+Se puede generar el paquete deb con el script construir_paquete.sh
 
-mvn clean package install
+	construir_paquete.sh 1.6.0-1
 
-Instalar afirma-lib-juniversalchardet
-	
-mvn clean package install
-	
-compilar afirma-lib-oro
+## Si queremos compilar el proyecto
+Si seguimos la compilacion manual (probar el proyecto pero no generar el deb)
 
-	mvn clean package install
+	git clone https://github.com/ctt-gob-es/clienteafirma.git
+	mvn clean package -Dmaven.test.skip=true -Denv=deploy
+
+    
 	
