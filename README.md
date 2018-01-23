@@ -2,6 +2,11 @@
 
 Scripts para la generación del paquete deb de Autofirma a partir de las fuentes
 
+## Cambios respecto a la versión oficial
+A nivel de código, es el mismo que la versión oficial. Como cambios principales está un mayor cuidado al empaquetado:
+ * No se cierran los navegadores al instalar (no he encontrado problemas, de momento)
+ * Se ha reducido el tamaño de los archivos eliminando librerias nativas que se incluían en los jars (librerias para windows, mac y linux)
+
 ## Prerrequisitos
 
 ### Oracle JDK 8
