@@ -19,6 +19,10 @@ En Ubuntu
 	sudo apt-get update
 	sudo apt-get install oracle-java8-installer
 
+### Subversion, git y maven
+
+	apt-get install subversion git maven
+
 
 ### Poner repositorio de la Universidad Jaume I en .m2/settings.xml
 	
