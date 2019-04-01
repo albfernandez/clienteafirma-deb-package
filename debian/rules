@@ -16,8 +16,8 @@
 override_dh_auto_build:
 	if [ -d external/clienteafirma-external ]; then	cd external/clienteafirma-external;	mvn clean install -Dmaven.text.skip=true; cd ../../; fi		
 	if [ -d external/jmulticard ]; then	cd external/jmulticard; mvn clean install -Dmaven.text.skip=true; cd ../../; fi
-	
-	mvn clean package -Dmaven.test.skip=true -Denv=deploy
+	mvn clean package -Dmaven.test.skip=true install
+	mvn clean package -Dmaven.test.skip=true -Denv=install
 
 override_dh_install:
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/autofirma/

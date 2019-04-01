@@ -1,3 +1,9 @@
+autofirma (1.6.3-1) unstable; urgency=medium
+
+  * Nueva version de autofirma
+
+ -- Alberto Fernández Martínez <infjaf@gmail.com>  Mon, 01 Apr 2019 20:17:30 +0200
+
 autofirma (1.6.0-2) unstable; urgency=medium
 
   * Fijamos la dependencia a openjdk8  
