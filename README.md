@@ -9,24 +9,10 @@ A nivel de código, es el mismo que la versión oficial. Como cambios principale
 
 ## Prerrequisitos
 
-### Oracle JDK 8
 
-Se necesita oracle-jdk 8, OpenJDK no tiene las librerias jnlp y no compila el proyecto completo.
+### Openjdk 8, Subversion, git y maven
 
-En Debian, descargarse java de la página de Oracle y ejecutar estos comandos (personaliza para la versin que te hayas bajado)
-
-	make-jpkg  jdk-8u151-linux-x64.tar.gz
-	dpkg -i oracle-java8-jdk_8u151_amd64.deb 
-	 
-En Ubuntu
-
-	sudo add-apt-repository ppa:webupd8team/java
-	sudo apt-get update
-	sudo apt-get install oracle-java8-installer
-
-### Subversion, git y maven
-
-	apt-get install subversion git maven
+	apt-get install subversion git maven openjdk-8-jdk
 
 
 ### Poner repositorio de la Universidad Jaume I en .m2/settings.xml
@@ -81,14 +67,14 @@ En Ubuntu
 ## Construir el paquete deb.
 Se puede generar el paquete deb con el script construir_paquete.sh
 
-	construir_paquete.sh 1.6.0-1
+	construir_paquete.sh 1.6.3-1
 
-## Si queremos compilar el proyecto
+## Si queremos compilar el proyecto clientefirma
 Si seguimos la compilacion manual (probar el proyecto pero no generar el deb)
 
 	git clone https://github.com/ctt-gob-es/clienteafirma.git
 	cd clienteafirma
-	mvn clean package -Dmaven.test.skip=true -Denv=deploy
+	mvn clean package -Dmaven.test.skip=true -Denv=install
 
     
 	
