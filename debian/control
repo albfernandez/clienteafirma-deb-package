@@ -2,13 +2,13 @@ Source: autofirma
 Section: utils
 Priority: optional
 Maintainer: Alberto Fernández <infjaf@gmail.com>
-Build-Depends: debhelper (>= 9), zip, maven, openjdk-8-jdk | oracle-java8-installer
+Build-Depends: debhelper (>= 9), zip, maven, openjdk-8-jdk | openjdk-11-jdk
 Standards-Version: 3.9.8
 Homepage: https://github.com/ctt-gob-es/clienteafirma
 
 Package: autofirma
 Architecture: all
-Depends: openjdk-8-jre, libnss3-tools, openssl, ca-certificates
+Depends: openjdk-8-jre | openjdk-11-jre, libnss3-tools, openssl, ca-certificates
 Description: Cliente Autofirma
  Autofirma es una Herramienta de firma electrónica en entornos de escritorio
  y dispositivos móviles.
