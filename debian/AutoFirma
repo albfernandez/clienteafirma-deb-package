@@ -1,2 +1,2 @@
 #!/bin/bash
-AUTOFIRMA_AVOID_UPDATE_CHECK=true AUTOFIRMA_DO_NOT_SEND_ANALYTICS=true java -DdisableSslChecks=true -Djdk.tls.maxHandshakeMessageSize=50000 -jar /usr/share/autofirma/AutoFirma.jar "$@"
+AUTOFIRMA_AVOID_UPDATE_CHECK=true AUTOFIRMA_DO_NOT_SEND_ANALYTICS=true java -Djdk.tls.maxHandshakeMessageSize=50000 -jar /usr/share/autofirma/AutoFirma.jar "$@"
