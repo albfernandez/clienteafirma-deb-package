@@ -20,15 +20,13 @@ set -e
 case "$1" in
     remove|upgrade|deconfigure)
 		# damos permisos de desinstalacion de los certificados del almacen de firefox
-		if [ -f "/usr/share/autofirma/uninstall.sh" ]; then
-
-		chmod +x /usr/share/autofirma/uninstall.sh
-		/usr/share/autofirma/uninstall.sh
-		echo "Se ha borrado el certificado CA de los almacenes de Firefox"
+		if [ -f "/usr/share/autofirma/uninstall.sh" ]; then			
+			sh /usr/share/autofirma/uninstall.sh
+			echo "Se ha borrado el certificado CA de los almacenes de Firefox"
 		fi
 
 		# borramos los certificados instalados en el almacenamiento del sistema
-		rm -rf /usr/share/ca-certificates/AutoFirma
+		rm -rf /usr/share/ca-certificates/AutoFirma/
 		rm -f /usr/local/share/ca-certificates/AutoFirma_ROOT.crt
 		rm -f /usr/share/autofirma/uninstall.sh
 		rm -f /usr/share/autofirma/autofirma.pfx
