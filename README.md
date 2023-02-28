@@ -43,6 +43,15 @@ A nivel de código, es el mismo que la versión oficial. Como cambios principale
 </settings>
 ```
 
+## Construir el paquete deb (modo rápido)
+Se puede generar el paquete deb con el script construir_paquete.sh, que ejecuta todos los pasos indicados en la sección "paso a paso"
+
+	git clone https://github.com/albfernandez/clienteafirma-deb-package.git
+	cd clienteafirma-deb-package
+	construir_paquete.sh
+	
+## Paso a paso
+
 ### Compilar e instalar Instalar dependencias
  * jmulticard
  * clienteafirma-external
@@ -64,17 +73,15 @@ A nivel de código, es el mismo que la versión oficial. Como cambios principale
      mvn clean package install
      
 
-## Construir el paquete deb.
-Se puede generar el paquete deb con el script construir_paquete.sh
 
-	construir_paquete.sh 1.6.3-1
-
-## Si queremos compilar el proyecto clientefirma
+### Si queremos compilar el proyecto clientefirma
 Si seguimos la compilacion manual (probar el proyecto pero no generar el deb)
 
 	git clone https://github.com/ctt-gob-es/clienteafirma.git
 	cd clienteafirma
 	mvn clean package -Dmaven.test.skip=true -Denv=install
+
+
 
     
 	
