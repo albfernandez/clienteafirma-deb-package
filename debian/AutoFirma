@@ -1,2 +1,22 @@
 #!/bin/bash
-java -Djava.net.preferIPv4Stack=true -Djdk.tls.maxHandshakeMessageSize=50000 -jar /usr/share/autofirma/AutoFirma.jar "$@"
+JAVA=java
+
+
+if [ -f /usr/lib/jvm/java-17-openjdk-amd64/bin/java ];
+then
+	JAVA=/usr/lib/jvm/java-17-openjdk-amd64/bin/java
+fi
+
+if [ -f /usr/lib/jvm/java-8-openjdk-amd64/bin/java ];
+then
+	JAVA=/usr/lib/jvm/java-8-openjdk-amd64/bin/java
+fi
+
+
+if [ -f /usr/lib/jvm/java-11-openjdk-amd64/bin/java ];
+then
+	JAVA=/usr/lib/jvm/java-11-openjdk-amd64/bin/java
+fi
+
+
+$JAVA -Djava.net.preferIPv4Stack=true -Djdk.tls.maxHandshakeMessageSize=50000 -jar /usr/share/autofirma/AutoFirma.jar "$@"
