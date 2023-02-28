@@ -24,12 +24,31 @@ override_dh_install:
 	cp afirma-simple/target/AutoFirma*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar
 	cp afirma-ui-simple-configurator/target/original-AutoFirmaConfigurador*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar
 	# clean files
-	#zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar nss/WINDOWS/nss32.zip nss/WINDOWS/nss64.zip
-	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar linux/certutil.linux.zip 
-	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar windows/certutil.windows.zip windows/afirma_register.exe windows/afirma_register.bat 
-	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar nss/WINDOWS/nss32.zip nss/WINDOWS/nss64.zip
-	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar osx/certutil.osx.zip osx/trust_settings.plist
-	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar linux/certutil.linux.zip windows/certutil.windows.zip osx/certutil.osx.zip
+	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar \
+		linux/certutil.linux.zip \
+		windows/certutil.windows.zip \
+		windows/afirma_register.exe \
+		windows/afirma_register.bat \
+		nss/WINDOWS/nss32.zip \
+		nss/WINDOWS/nss64.zip \
+		osx/certutil.osx.zip \
+		osx/trust_settings.plist \
+		delight/rhinosandox/RhinoSandbox.java delight/rhinosandox/RhinoSandboxes.java \
+		delight/rhinosandox/exceptions/ScriptCPUAbuseException.java \
+		delight/rhinosandox/exceptions/ScriptDurationException.java \
+		delight/rhinosandox/internal/RhinoEval.java \
+		delight/rhinosandox/internal/RhinoEvalDummy.java \
+		delight/rhinosandox/internal/RhinoSandboxImpl.java \
+		delight/rhinosandox/internal/SafeClassShutter.java \
+		delight/rhinosandox/internal/SafeContext.java \
+		delight/rhinosandox/internal/SafeNativeJavaObject.java \
+		delight/rhinosandox/internal/SafeWrapFactory.java
+	
+	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar \
+		linux/certutil.linux.zip \
+		windows/certutil.windows.zip \
+		osx/certutil.osx.zip
+	
 	dh_install
 
 
