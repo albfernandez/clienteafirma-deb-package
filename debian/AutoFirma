@@ -19,4 +19,4 @@ then
 fi
 
 
-$JAVA -Djava.net.preferIPv4Stack=true -Djdk.tls.maxHandshakeMessageSize=50000 -jar /usr/share/autofirma/AutoFirma.jar "$@"
+$JAVA -Djava.net.preferIPv4Stack=true -Djdk.tls.maxHandshakeMessageSize=524288 -jar /usr/share/autofirma/AutoFirma.jar "$@"
