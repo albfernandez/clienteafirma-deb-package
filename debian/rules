@@ -19,6 +19,10 @@ override_dh_auto_build:
 	mvn   clean package -Dmaven.test.skip=true install
 	mvn -pl '!afirma-server-triphase-signer'  clean package -Dmaven.test.skip=true -Denv=install
 
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+	
 override_dh_install:
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/autofirma/
 	cp afirma-simple/target/AutoFirma*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar
