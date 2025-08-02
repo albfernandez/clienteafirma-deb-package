@@ -10,38 +10,11 @@ A nivel de código, es el mismo que la versión oficial. Como cambios principale
 ## Prerrequisitos
 
 
-### Openjdk 8, Subversion, git y maven
+### Openjdk 11, Subversion, zip, git y maven
 
-	apt-get install subversion git maven openjdk-8-jdk
+	apt-get install subversion zip git maven openjdk-11-jdk
 
 
-### Poner repositorio de la Universidad Jaume I en .m2/settings.xml
-	
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
-	<profiles>
-  		<profile>
-			<id>uji-repository</id>
-			<repositories>
-				<repository>
-					<id>uji-repository</id>
-					<name>Universitat Jaume I</name>
-					<url>http://devel.uji.es/nexus/content/groups/public/</url>
-					<layout>default</layout>
-					<releases>
-						<enabled>true</enabled>
-						<updatePolicy>never</updatePolicy>
-					</releases>
-				</repository>
-			</repositories>
-		</profile>
-	</profiles>
-	<activeProfiles>
-    	<activeProfile>uji-repository</activeProfile>
-  	</activeProfiles>
-</settings>
-```
 
 ## Construir el paquete deb (modo rápido)
 Se puede generar el paquete deb con el script construir_paquete.sh, que ejecuta todos los pasos indicados en la sección "paso a paso"
