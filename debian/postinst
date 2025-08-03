@@ -23,7 +23,7 @@ set -e
 case "$1" in
     configure)
 		# generamos certificado CA y SSL
-		java -classpath /usr/share/autofirma/AutoFirmaConfigurador.jar:/usr/share/autofirma/AutoFirma.jar es.gob.afirma.standalone.configurator.AutoFirmaConfigurator
+		java -Djava.awt.headless=true -classpath /usr/share/autofirma/autofirmaConfigurador.jar:/usr/share/autofirma/autofirma.jar es.gob.afirma.standalone.configurator.AutofirmaConfigurator
 		# damos permiso al script de instalacion del certificado para firefox y lo ejecutamos
 
 		echo "Generacion de certificados"
@@ -35,17 +35,17 @@ case "$1" in
 		# echo "Instalacion del certificado CA en el almacenamiento de Firefox y Chrome"
 
 		#Creacion de certificado .pem y .crt para su importacion en el almacenamiento del sistema
-		openssl x509 -inform der -in  /usr/share/autofirma/AutoFirma_ROOT.cer -out  /usr/share/autofirma/AutoFirma_ROOT.pem
+		openssl x509 -inform der -in  /usr/share/autofirma/Autofirma_ROOT.cer -out  /usr/share/autofirma/Autofirma_ROOT.pem
 
-		mv /usr/share/autofirma/AutoFirma_ROOT.pem /usr/share/autofirma/AutoFirma_ROOT.crt
+		mv /usr/share/autofirma/Autofirma_ROOT.pem /usr/share/autofirma/Autofirma_ROOT.crt
 		
-		if [ -d "/usr/share/ca-certificates/AutoFirma" ]; then
-			rm -rf /usr/share/ca-certificates/AutoFirma/
+		if [ -d "/usr/share/ca-certificates/autofirma" ]; then
+			rm -rf /usr/share/ca-certificates/autofirma/
 		fi
 
-		mkdir -p /usr/share/ca-certificates/AutoFirma/
-		cp  /usr/share/autofirma/AutoFirma_ROOT.crt /usr/share/ca-certificates/AutoFirma/AutoFirma_ROOT.crt
-		cp  /usr/share/autofirma/AutoFirma_ROOT.crt /usr/local/share/ca-certificates/AutoFirma_ROOT.crt
+		mkdir -p /usr/share/ca-certificates/autofirma/
+		cp  /usr/share/autofirma/Autofirma_ROOT.crt /usr/share/ca-certificates/autofirma/Autofirma_ROOT.crt
+		cp  /usr/share/autofirma/Autofirma_ROOT.crt /usr/local/share/ca-certificates/Autofirma_ROOT.crt
 		echo "Instalacion del certificado CA en el almacenamiento del sistema"
 		update-ca-certificates
 		
@@ -66,8 +66,8 @@ case "$1" in
 		fi
 		
 		# borramos los ficheros de instalacion
-		#rm /usr/share/autofirma/script.sh
-		#rm /usr/share/autofirma/AutoFirma_ROOT.crt
+		rm /usr/share/autofirma/script.sh
+		rm /usr/share/autofirma/Autofirma_ROOT.crt
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

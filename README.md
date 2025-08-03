@@ -21,7 +21,7 @@ Se puede generar el paquete deb con el script construir_paquete.sh, que ejecuta 
 
 	git clone https://github.com/albfernandez/clienteafirma-deb-package.git
 	cd clienteafirma-deb-package
-	construir_paquete.sh
+	sh construir_paquete.sh
 	
 ## Paso a paso
 

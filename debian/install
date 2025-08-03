@@ -1,4 +1,5 @@
 debian/tmp/usr/share/autofirma/
-debian/AutoFirma.png /usr/share/autofirma/
+debian/autofirma.png /usr/share/autofirma/
 debian/autofirma.desktop /usr/share/applications/
-debian/AutoFirma /usr/bin/
+debian/bin-scripts/autofirma /usr/bin/
+debian/bin-scripts/autofirmacl /usr/bin/

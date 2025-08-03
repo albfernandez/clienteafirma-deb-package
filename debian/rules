@@ -16,8 +16,8 @@
 override_dh_auto_build:
 	if [ -d external/clienteafirma-external ]; then	cd external/clienteafirma-external;	mvn clean install -Dmaven.text.skip=true; cd ../../; fi		
 	if [ -d external/jmulticard ]; then	cd external/jmulticard; mvn clean install -Dmaven.text.skip=true; cd ../../; fi
-	mvn   clean package -Dmaven.test.skip=true install
-	mvn -pl '!afirma-server-triphase-signer'  clean package -Dmaven.test.skip=true -Denv=install
+	mvn  clean package -Dmaven.test.skip=true install
+	mvn  clean package -Dmaven.test.skip=true -Denv=install
 
 
 override_dh_builddeb:
@@ -25,13 +25,13 @@ override_dh_builddeb:
 	
 override_dh_install:
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/autofirma/
-	cp afirma-simple/target/AutoFirma*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar
-	cp afirma-ui-simple-configurator/target/original-AutoFirmaConfigurador*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar
+	cp afirma-simple/target/autofirma.jar $(CURDIR)/debian/tmp/usr/share/autofirma/autofirma.jar
+	cp afirma-ui-simple-configurator/target/original-autofirmaConfigurador*.jar $(CURDIR)/debian/tmp/usr/share/autofirma/autofirmaConfigurador.jar
 	# clean files
-	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirma.jar \
+	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/autofirma.jar \
 		linux/certutil.linux.zip \
 		windows/certutil.windows.zip \
-		windows/afirma_register.exe \
+		windows/execute.bat \
 		windows/afirma_register.bat \
 		nss/WINDOWS/nss32.zip \
 		nss/WINDOWS/nss64.zip \
@@ -48,7 +48,7 @@ override_dh_install:
 		delight/rhinosandox/internal/SafeNativeJavaObject.java \
 		delight/rhinosandox/internal/SafeWrapFactory.java
 	
-	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/AutoFirmaConfigurador.jar \
+	zip -d $(CURDIR)/debian/tmp/usr/share/autofirma/autofirmaConfigurador.jar \
 		linux/certutil.linux.zip \
 		windows/certutil.windows.zip \
 		osx/certutil.osx.zip
