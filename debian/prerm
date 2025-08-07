@@ -27,10 +27,13 @@ case "$1" in
 
 		# borramos los certificados instalados en el almacenamiento del sistema
 		rm -rf /usr/share/ca-certificates/AutoFirma/
+		rm -rf /usr/share/ca-certificates/autofirma/
 		rm -f /usr/local/share/ca-certificates/AutoFirma_ROOT.crt
+		rm -f /usr/local/share/ca-certificates/Autofirma_ROOT.crt
 		rm -f /usr/share/autofirma/uninstall.sh
 		rm -f /usr/share/autofirma/autofirma.pfx
 		rm -f /usr/share/autofirma/AutoFirma_ROOT.cer
+		rm -f /usr/share/autofirma/Autofirma_ROOT.cer
 
 
 		update-ca-certificates

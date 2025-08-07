@@ -29,6 +29,7 @@ case "$1" in
 		echo "Generacion de certificados"
 
 		if [ -f "/usr/share/autofirma/script.sh" ]; then
+			sed -i "s/AutoFirma_ROOT.cer/Autofirma_ROOT.cer/g" /usr/share/autofirma/script.sh
 			sh /usr/share/autofirma/script.sh
 		fi
 
@@ -66,8 +67,9 @@ case "$1" in
 		fi
 		
 		# borramos los ficheros de instalacion
-		rm /usr/share/autofirma/script.sh
-		rm /usr/share/autofirma/Autofirma_ROOT.crt
+		rm -f /usr/share/autofirma/script.sh
+		rm -f /usr/share/autofirma/Autofirma_ROOT.crt
+		rm -f /usr/share/autofirma/AutoFirma_ROOT.cer
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

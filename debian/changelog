@@ -1,3 +1,9 @@
+autofirma (1.9.202507.1-2) unstable; urgency=medium
+
+  * Mejora scripts de desinstalacion
+
+ -- Alberto Fernández Martínez <infjaf@gmail.com>  Wed, 06 Aug 2025 21:14:34 +0200
+
 autofirma (1.9.202507.1-1) unstable; urgency=medium
 
   * Empaqueta nueva version 1.9
