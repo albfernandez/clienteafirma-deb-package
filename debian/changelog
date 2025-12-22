@@ -1,3 +1,9 @@
+autofirma (1.9.202507.4-1) unstable; urgency=medium
+
+  * Ajusta búsqueda del path para nueva ubicación de profiles en Firefox según XDG 
+
+ -- Alberto Fernández Martínez <infjaf@gmail.com>  Mon, 22 Dec 2025 09:50:31 +0100
+
 autofirma (1.9.202507.1-2) unstable; urgency=medium
 
   * Mejora scripts de desinstalacion
